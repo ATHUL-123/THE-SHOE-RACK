@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.connect("mongodb://127.0.0.1:27017/theshoerack");
+mongoose.connect("mongodb+srv://athultv702:Athul123@cluster0.z0i1vts.mongodb.net/test");
 const express=require("express")
 const path =require('path')
 const app =  express();
