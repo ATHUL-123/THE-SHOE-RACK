@@ -7,9 +7,9 @@ require('dotenv').config();
 
 const discountExpiryCron = require('./others/discountExpiryCron');
 // twilio settings for otp
-const accountSid = 'ACb052f7e19184a10faa884455b275a779';
-const authToken = '1ea28cd24c8846f6755234f40fdd620c';
-const twilio = require('twilio')(accountSid, authToken);
+// const accountSid = 'ACb052f7e19184a10faa884455b275a779';
+// const authToken = '1ea28cd24c8846f6755234f40fdd620c';
+// const twilio = require('twilio')(accountSid, authToken);
 const session=require('express-session')
 app.use(express.static(path.join(__dirname,'public')));
 
