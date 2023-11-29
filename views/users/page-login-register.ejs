@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/page-login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>SHOE RACK</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/maind134.css?v=3.4">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    
+    <style>
+        .gradient-custom-3 {
+/* fallback for old browsers */
+background: #84fab0;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+}
+.gradient-custom-4 {
+/* fallback for old browsers */
+background: #84fab0;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+}  
+
+.red {
+ color: red;
+}
+    </style>
+</head>
+
+<body>
+    
+    <div class="mobile-header-active mobile-header-wrapper-style">
+        <div class="mobile-header-wrapper-inner">
+            <div class="mobile-header-top">
+                <div class="mobile-header-logo">
+                    <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                </div>
+                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                    <button class="close-style search-close">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-header-content-area">
+                <div class="mobile-search search-style-3 mobile-header-border">
+                    <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"><i class="fi-rs-search"></i></button>
+                    </form>
+                </div>
+                <div class="mobile-menu-wrap mobile-header-border">
+                    
+                    <!-- mobile menu start -->
+                    
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-header-info-wrap mobile-header-border">
+                    <div class="single-mobile-header-info mt-30">
+                        <a  href="/contact"> Our location </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="/register">Log In / Sign Up </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="#">(+91) - 97470 - 55702 </a>
+                    </div>
+                </div>
+                <div class="mobile-social-icon">
+                    <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="page-header breadcrumb-wrap bg-dark">
+               
+         
+            <div class="col-md-6">
+               
+               <h4 class="text-white ">Looks like your new here!    Sign up with your mobile number to get started</h4>
+              
+            </div>
+        </div>
+        <section class="vh-100 "
+        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 15px;">
+                  <div class="card-body p-5">
+                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                    <script>
+                       
+                    </script>
+                   
+                         <%if(message=='.'){%>
+                            <script>
+                               document.addEventListener('DOMContentLoaded', function(){
+                                    userExist();
+                               });
+                                </script>  
+                         <%}else if(message=='invalid phone'){%>
+                          <script>
+                            document.addEventListener('DOMContentLoaded', function(){
+                                invalidPhone();
+                            });
+                             </script>  
+                         <%}else{%>
+                          <h4 class="text-danger"><%=message%></h4>
+                          <%}%>
+                  
+                          <form action="/register" method="post" onsubmit="return validatePassword()">
+
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" pattern="^[a-zA-Z\s]+$" title="Please enter a valid name" name="name" required id="name" class="form-control form-control-lg" />
+                        <label id="error-name" class="form-label" for="">Your Name</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid Email" required name="email" id="email" class="form-control form-control-lg" />
+                        <label id="error-mail" class="form-label" for="form3Example3cg">Your Email</label>
+                        <!-- <span id="error-mail"></span> -->
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="phone"  required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" name="phone" id="phone" class="form-control form-control-lg" />
+                        <label id="error-phone" class="form-label" for="form3Example4cg">Phone</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="password"  required name="password" id="password"  class="form-control form-control-lg" />
+
+                        <label id="error-password" class="form-label" for="form3Example4cdg">password</label>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="password" required name="confirmPassword" id="confirmPassword"  class="form-control form-control-lg" />
+                        <label id="error-confirm-password" class="form-label" for="confirmPassword">Confirm Password</label>
+                      </div>
+                      
+      
+                      <div class="form-check d-flex justify-content-center mb-5">
+                        <input  class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                        <label class="form-check-label" for="form2Example3g">
+                          I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                        </label>
+                      </div>
+
+      
+                      <div class="d-flex justify-content-center">
+                     <input  id="register" type="submit" 
+                         class="btn btn-success  btn-block btn-lg gradient-custom-4 text-body" value="register">
+                      </div>
+      
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login"
+                          class="fw-bold text-body"><u>Login here</u></a></p>
+      
+                    </form>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+//       function validatePassword() {
+//     var password = document.getElementById('password').value;
+//     var passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+//     if (!password.match(passRegex)) {
+//         alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+//         return false;
+//     }
+
+//     return true;
+// }
+
+      function validateForm() {
+        // Add your custom validation logic here
+    
+        // Example validation for name field
+        var name = document.getElementById("name").value;
+        if (name.trim() === "") {
+          alert("Name is required.");
+          return false;
+        }
+    
+        // Example validation for email field
+        var email = document.getElementById("email").value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.match(emailRegex)) {
+          alert("Invalid email address.");
+          return false;
+        }
+    
+        // Add similar validations for phone and password fields
+    
+        return true; // Allow form submission if all validations pass
+      }
+    </script>
+    </script>
+    <script>
+function validatePassword() {
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const errorPassword = document.getElementById('error-password');
+  const errorConfirmPassword = document.getElementById('error-confirm-password');
+  
+  // Regular expression for a strong password (at least 8 characters, with one uppercase, one lowercase, one number, and one special character)
+  const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  
+  if (password !== confirmPassword) {
+    errorPassword.textContent = 'Passwords do not match';
+    errorConfirmPassword.textContent = 'Passwords do not match';
+    errorPassword.classList.add('red'); 
+    errorConfirmPassword.classList.add('red');
+    return false;
+  } else if (!strongPasswordRegex.test(password)) {
+    errorPassword.textContent = 'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character';
+    errorConfirmPassword.textContent = '';
+    errorPassword.classList.add('red'); // Add class for red color
+    errorConfirmPassword.classList.remove('red')
+    return false;
+  } else {
+    errorPassword.textContent = '';
+    errorConfirmPassword.textContent = '';
+    return true;
+  }
+}
+
+</script>    
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.js"></script>
+    <script src="assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/jquery-ui.js"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="assets/js/plugins/images-loaded.js"></script>
+    <script src="assets/js/plugins/isotope.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="assets/js/plugins/jquery.theia.sticky.js"></script>
+    <!-- Template  JS -->
+    <script src="assets/js/maind134.js?v=3.4"></script>
+    <script src="/assets/js/userValidate.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+   
+       
+    
+    
+</body>
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/page-login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
+</html>

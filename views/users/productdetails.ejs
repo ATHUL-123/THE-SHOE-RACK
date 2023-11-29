@@ -1,0 +1,1057 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/shop-product-full.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:46 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <title>SHOE RACK</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/assets/css/maind134.css?v=3.4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .out-of-stock {
+            text-decoration: line-through;
+            color: #ff0000;
+            /* Optionally, you can make it a lighter color */
+            pointer-events: none;
+            /* Disable pointer events on out-of-stock items */
+            opacity: 0.5;
+        }
+
+        .product-image-slider img {
+            object-fit: cover;
+            /* This will maintain the aspect ratio and cover the entire area */
+            width: 100%;
+            height: 100%;
+        }
+
+        .star-rating {
+            font-size: 0;
+            /* Prevents spaces between inline-block elements */
+        }
+
+        .star {
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc;
+            display: inline-block;
+        }
+
+        .star.active,
+        .star:hover {
+            color: gold;
+        }
+
+        .checked {
+            color: orange;
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/magiczoom/magiczoom.css">
+    <script src="/assets/magiczoom/magiczoom.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+    <!-- Quick view -->
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="detail-gallery">
+                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                                <!-- MAIN SLIDES -->
+                                <div class="product-image-slider">
+                                    <%if(products){%>
+                                        <%for(let i=0;i<products.images_url.length;i++){ %>
+                                            <figure class="border-radius-10">
+                                                <img src="<%=products.images_url[i]%>" alt="product image">
+                                            </figure>
+                                            <%}%>
+                                                <%}%>
+
+                                </div>
+                                <!-- THUMBNAILS -->
+                                
+                            </div>
+                            <!-- End Gallery -->
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header-area header-style-1 header-height-2">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li><i class="fi-rs-smartphone"></i> <a href="#">(+91) -974 7055 702</a></li>
+                                <li><i class="fi-rs-marker"></i><a href="/contact">Our location</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+                        <div class="text-center">
+                            <div id="news-flash" class="d-inline-block">
+                                <ul>
+                                    <li>Get great Shoes up to 20% off <a href="/shop">View details</a>
+                                    </li>
+                                    <li>Supper Value Deals - Save more with coupons</li>
+                                    <li>Trendy Shoes, save up 35% off <a
+                                            href="/shop">Shop now</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info header-info-right">
+
+                            <ul>
+                                <%if(user){%>
+                                    <li>
+                                        <a class="language-dropdown-active" href="#"> <i
+                                                class="fi-rs-world"></i>Account<i
+                                                class="fi-rs-angle-small-down"></i></a>
+                                        <ul class="language-dropdown">
+                                            <li><a href="/logout">logout</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <%}else{%>
+                                        <li><i class="fi-rs-user"></i><a href="/login">Log In</a></li>
+                                        <li><i class="fi-rs-user"></i><a href="/register">Sign Up</a></li>
+                                        <%}%>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+                <div class="container">
+                    <div class="header-wrap">
+                        <div class="logo logo-width-1">
+                            <a href="/"><img src="/assets/imgs/theme/logo.svg" alt="logo"></a>
+                        </div>
+                        <div class="header-right">
+                            <div class="search-style-2">
+                                <form action="/" method="post">
+                                    <select name="cat" class="select-active">
+                                        <%for(let i=0;i<category.length;i++){%>
+                                            <%if(category[i].status){%>
+                                                <option value="<%=category[i]._id%>">
+                                                    <%=category[i].name%>
+                                                </option>
+                                                <%}%>
+                                                    <%}%>
+                                    </select>
+                                    <input type="text" name="search" placeholder="Search for items...">
+                                </form>
+                            </div>
+                            <div class="header-action-right">
+                                <div class="header-action-2">
+                                    <div class="header-action-icon-2">
+                                        <a href="wishlist">
+                                            <img class="svgInject" alt="Evara"
+                                                src="/assets/imgs/theme/icons/icon-heart.svg">
+                                            <!-- <span class="pro-count blue">4</span> -->
+                                        </a>
+                                    </div>
+                                    <div class="header-action-icon-2">
+                                        <a class="mini-cart-icon" href="/shopcart">
+                                            <img alt="Evara" src="/assets/imgs/theme/icons/icon-cart.svg">
+
+
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom header-bottom-bg-color sticky-bar">
+                <div class="container">
+                    <div class="header-wrap header-space-between position-relative">
+                        <div class="logo logo-width-1 d-block d-lg-none">
+                            <a href="/"><img src="/assets/imgs/theme/logo.svg" alt="logo"></a>
+                        </div>
+                        <div class="header-nav d-none d-lg-flex">
+
+                            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
+                                <nav>
+                                    <ul>
+                                        <li><a class="active" href="/">Home <i></i></a></li>
+                                        <li>
+                                            <a href="/about">About</a>
+                                        </li>
+                                        <li><a href="shop-grid-right.html">Brands<i class="fi-rs-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                             
+                                                <%for(let i=0;i<brands.length;i++){%>
+                                                    <li><a href="/brandsearch?brand=<%=brands[i].name%>">
+                                                            <%=brands[i].name%>
+                                                        </a></li>
+                                                    <%}%>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="/useraccount">Account<i class=""></i></a>
+                                          
+                                        </li>
+                                        <li><a href="#">More<i class="fi-rs-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/contact">Contact</a></li>
+                                                <li><a href="/useraccount">My Account</a></li>
+                                                <li><a href="/purchaseguide">Purchase Guide</a></li>
+                                                <li><a href="/policy">Privacy Policy</a></li>
+                                                <li><a href="/terms">Terms of Service</a></li>
+                                                <!-- <li><a href="page-404.html">404 Page</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/shop">Shop</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="hotline d-none d-lg-block">
+                            <p><i class="fi-rs-headset"></i><span>Hotline</span>9747 055 702</p>
+                        </div>
+                       
+                        <div class="header-action-right d-block d-lg-none">
+                            <div class="header-action-2">
+                                <div class="header-action-icon-2">
+                                    <a href="/wishlist">
+                                        <img alt="shoerack" src="/assets/imgs/theme/icons/icon-heart.svg">
+                                       
+                                    </a>
+                                </div>
+                                <div class="header-action-icon-2">
+                                    <a class="mini-cart-icon" href="/shopcart">
+                                        <img alt="shoerack" src="/assets/imgs/theme/icons/icon-cart.svg">
+                                       
+                                    </a>
+                                    
+                                </div>
+                                <div class="header-action-icon-2 d-block d-lg-none">
+                                    <div class="burger-icon burger-icon-white">
+                                        <span class="burger-icon-top"></span>
+                                        <span class="burger-icon-mid"></span>
+                                        <span class="burger-icon-bottom"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <div class="mobile-header-active mobile-header-wrapper-style">
+        <div class="mobile-header-wrapper-inner">
+            <div class="mobile-header-top">
+                <div class="mobile-header-logo">
+                    <a href="/"><img src="/assets/imgs/theme/logo.svg" alt="logo"></a>
+                </div>
+                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                    <button class="close-style search-close">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-header-content-area">
+                <div class="mobile-search search-style-3 mobile-header-border">
+                    <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"><i class="fi-rs-search"></i></button>
+                    </form>
+                </div>
+                <div class="mobile-menu-wrap mobile-header-border">
+
+                    <!-- mobile menu start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="/">Home</a>
+                                <ul class="dropdown">
+                                    <li><a href="/">Home</a></li>
+                                    
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="/shop">shop</a>
+                               
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/useraccount">Account</a>
+                                
+                            </li>
+                            
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">More</a>
+                                <ul class="dropdown">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/useraccount">My Account</a></li>
+                                    <li><a href="/register">login/register</a></li>
+                                    <li><a href="/purchaseguide">Purchase Guide</a></li>
+                                    <li><a href="/policy">Privacy Policy</a></li>
+                                    <li><a href="/terms">Terms of Service</a></li>
+                                    
+                                </ul>
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-header-info-wrap mobile-header-border">
+                    <div class="single-mobile-header-info mt-30">
+                        <a href="/contact"> Our location </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="/register">Log In / Sign Up </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="#">(+91) -9747 055 702</a>
+                    </div>
+                </div>
+                <div class="mobile-social-icon">
+                    <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                    <a href="https://www.instagram.com/athul_tv/"><img src="/assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                    <a href="https://www.instagram.com/athul_tv/"><img src="/assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                    <a href="https://www.instagram.com/athul_tv/"><img src="/assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                    <a href="https://www.instagram.com/athul_tv/"><img src="/assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                    <a href="https://www.instagram.com/athul_tv/"><img src="/assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/" rel="nofollow">Home</a>
+                      <span>view</span>
+                </div>
+            </div>
+        </div>
+        <section class="mt-50 mb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product-detail accordion-detail">
+                            <div class="row mb-50">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="detail-gallery">
+                                        <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                                        <!-- MAIN SLIDES -->
+                                        <div class="product-image-slider">
+                                            <%if(products){%>
+                                                <%for(let i=0;i<products.images_url.length;i++){ %>
+                                                    <!-- <figure  class="border-radius-10">
+                                               
+                                                    <img  id="myimage" width="300" height="240" src="/<%=products.images_url[i]%>" alt="product image"> -->
+
+                                                    <a href="/<%=products.images_url[i]%>" class="MagicZoom"><img
+                                                            src="/<%=products.images_url[i]%>"></a>
+
+                                                    <!-- </figure> -->
+                                                    <%}%>
+                                                        <%}%>
+                                        </div>
+
+                                        <!-- THUMBNAILS -->
+                                        <div class="slider-nav-thumbnails pl-15 pr-15">
+                                            <%if(products){%>
+                                                <%for(let i=0;i<products.images_url.length;i++){ %>
+                                                    <figure class="border-radius-10">
+
+                                                        <img src="/<%=products.images_url[i]%>" alt="product image">
+                                                    </figure>
+                                                    <%}%>
+                                                        <%}%>
+                                        </div>
+                                    </div>
+
+                                    <!-- End Gallery -->
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <form action="/addtocart" method="post">
+                                        <div class="detail-info">
+                                            <h2 class="title-detail">
+                                                <%=products.productName%>
+                                            </h2>
+                                            <div class="product-detail-rating">
+                                                <div class="pro-details-brand">
+                                                    <span> Brands: <a href="shop-grid-right.html">
+                                                            <%=products.Brand%>
+                                                        </a></span>
+                                                    <input type="text" name="productId" value="<%=products._id%>"
+                                                        hidden>
+                                                </div>
+                                                <div class="product-rate-cover text-end">
+                                                    <div class="product-rate d-inline-block">
+                                                        <% 
+                                                        const maxRating = 5; // Maximum rating (5 stars)
+                                                        const avgRating = parseFloat(avg); // Parse the average rating to ensure it's a number
+                                                        const starPercentage = (avgRating / maxRating) * 100; // Calculate percentage based on average rating
+                                                        %>
+                                                        <div class="product-rating" style="width: <%= starPercentage %>%;">
+                                                           
+                                                        </div>
+                                                    </div>
+                                                    <span class="font-small ml-5 text-muted"> (<%= avg %> stars)</span>
+                                                    <span class="font-small ml-5 text-muted"> (<%=products.reviews.length%> reviews)</span>
+                                                </div>
+                                            </div>
+                                            <%if(products.discountedPrice<1){%>
+                                                <div class="clearfix product-price-cover">
+                                                    <div class="product-price primary-color float-left">
+                                                        <ins><span class="text-brand">₹<%=products.salePrice%>
+                                                                    </span></ins>
+                                                        <input name="price" value="<%=products.salePrice%>" hidden>
+                                                    </div>
+                                                </div>
+                                                <%}else{%>
+                                                    <div class="clearfix product-price-cover">
+                                                        <div class="product-price primary-color float-left">
+                                                            <ins><span class="text-brand">₹</span>
+                                                                <%=products.discountedPrice%>
+                                                            </ins>
+                                                            <input name="price" value="<%=products.salePrice%>" hidden>
+                                                            <ins><span class="old-price font-md ml-15">₹
+                                                                    <%=products.salePrice%>
+                                                                </span></ins>
+                                                            <span class="save-price  font-md color3 ml-15">
+                                                                <%=products.category.discount%>% Off
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <%}%>
+                                                        <div class="bt-1 border-color-1 mt-15 mb-15"></div>
+                                                        <div class="short-desc mb-30">
+                                                            <p>
+                                                                <%=products.description%>
+                                                            </p>
+                                                        </div>
+                                                        <div class="product_sort_info font-xs mb-30">
+                                                            <ul>
+                                                                <li class="mb-10"><i class="fi-rs-crown mr-5"></i> 1
+                                                                    Year <%=products.Brand%>
+                                                                    Brand Warranty</li>
+                                                                <li class="mb-10"><i class="fi-rs-refresh mr-5"></i> 30
+                                                                    Day Return
+                                                                    Policy</li>
+                                                                <li><i class="fi-rs-credit-card mr-5"></i> Cash on
+                                                                    Delivery
+                                                                    available</li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="attr-detail attr-size">
+                                                            <strong class="mr-10">Size</strong>
+
+                                                            <ul class="list-filter size-filter font-small">
+                                                                <%if(products.sizes[0].quantity==0){%>
+                                                                    <li class="out-of-stock Disabled"><a
+                                                                            href="/productdetails/<%=products._id %>">7</a>
+                                                                    </li>
+                                                                    <%}else{%>
+
+                                                                        <li class="active"
+                                                                            onclick="showquantity(`<%=products.sizes[0].quantity%>`,7)">
+                                                                            <a href="">7</a>
+                                                                        </li>
+                                                                        <%}%>
+                                                                            <%if(products.sizes[1].quantity==0){%>
+                                                                                <li class="out-of-stock Disabled"><a
+                                                                                        href="#">8</a>
+                                                                                </li>
+                                                                                <%}else{%>
+
+                                                                                    <li
+                                                                                        onclick="showquantity(`<%=products.sizes[1].quantity%>`,8)">
+                                                                                        <a href="#">8</a>
+                                                                                    </li>
+                                                                                    <%}%>
+                                                                                        <%if(products.sizes[2].quantity==0){%>
+                                                                                            <li
+                                                                                                class="out-of-stock Disabled ">
+                                                                                                <a href="#">9</a></li>
+                                                                                            <%}else{%>
+
+                                                                                                <li
+                                                                                                    onclick="showquantity(`<%=products.sizes[2].quantity%>`,9)">
+                                                                                                    <a href="#">9</a>
+                                                                                                </li>
+                                                                                                <%}%>
+                                                                                                    <%if(products.sizes[3].quantity==0){%>
+                                                                                                        <li
+                                                                                                            class="out-of-stock Disabled">
+                                                                                                            <a
+                                                                                                                href="#">10</a>
+                                                                                                        </li>
+                                                                                                        <%}else{%>
+
+                                                                                                            <li
+                                                                                                                onclick="showquantity(`<%=products.sizes[3].quantity%>`,10)">
+                                                                                                                <a
+                                                                                                                    href="#">10</a>
+                                                                                                            </li>
+                                                                                                            <%}%>
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+                                                        <div class="detail-extralink">
+                                                            <div class="detail-qty border radius">
+                                                                <a href="#" class="qty-down"
+                                                                    onclick=" decreaseQuantity()"><i
+                                                                        class="fi-rs-angle-small-down"
+                                                                        onclick=""></i></a>
+                                                                <span class="qty-val" id="quantityValue">1</span>
+                                                                <a href="#" class="qty-up"
+                                                                    onclick="increaseQuantity()"><i
+                                                                        class="fi-rs-angle-small-up"></i></a>
+                                                            </div>
+                                                            <div class="product-extra-link2">
+                                                                <input type="hidden" name="selectedSize"
+                                                                    id="selectedSize" value="">
+                                                                <input type="hidden" name="selectedQuantity"
+                                                                    id="selectedQuantity" value="1">
+                                                                <button type="submit"
+                                                                    class="button button-add-to-cart">Add to
+                                                                    cart</button>
+
+                                    </form>
+                                    <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                        href="/addtowishlist?productId=<%=products._id%>"><i
+                                            class="fi-rs-heart"></i></a>
+
+                                </div>
+                            </div>
+                            <ul class="product-meta font-xs color-grey mt-50">
+                                <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
+                                <li class="mb-5">Tags: <a href="#" rel="tag">
+                                        <%=products.tags%>
+                                    </a>, <a href="#" rel="tag">
+                                        <%=products.category.name%>
+                                    </a>, <a href="#" rel="tag">Shoe</a> </li>
+                                <li>Availability:<span id="quantity" class="in-stock text-success ml-5"> Items In
+                                        Stock</span></li>
+                                <script>
+                                    function showquantity(quantity, size) {
+                                        document.getElementById('selectedSize').value = size;
+                                        document.getElementById('quantity').textContent = quantity + ' Items In Stock';
+                                    }
+                                </script>
+
+                            </ul>
+                            <script>
+                                function increaseQuantity() {
+
+                                    const quantityElement = document.getElementById('quantityValue');
+                                    const currentQuantity = parseInt(quantityElement.innerText, 10);
+                                    const newQuantity = currentQuantity + 1;
+
+                                    quantityElement.innerText = newQuantity;
+                                    document.getElementById('selectedQuantity').value = newQuantity;
+                                }
+
+                                function decreaseQuantity() {
+
+                                    const quantityElement = document.getElementById('quantityValue');
+                                    const currentQuantity = parseInt(quantityElement.innerText, 10);
+                                    const newQuantity = Math.max(currentQuantity - 1, 1); // Ensure quantity doesn't go below 1
+                                    if (newQuantity == 0) {
+                                        quantityElement.innerText = newQuantity + 1
+                                        document.getElementById('selectedQuantity').value = newQuantity;
+                                    } else {
+                                        quantityElement.innerText = newQuantity;
+                                        document.getElementById('selectedQuantity').value = newQuantity;
+                                    }
+
+                                }
+                            </script>
+                        </div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                document.getElementById('selectedSize').value = 7;
+                            });
+                        </script>
+
+                        <!-- Detail Info -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 m-auto entry-main-content">
+                        <h2 class="section-title style-1 mb-30">Description</h2>
+                        <div class="description mb-50">
+                            <p>
+                                <%=products.description2%>
+                            </p>
+                            <hr class="wp-block-separator is-style-dots">
+                            <h4 class="mt-30">Packaging & Delivery</h4>
+                            <hr class="wp-block-separator is-style-wide">
+                            <p>In terms of packaging, we prioritize the safety and integrity of your order. Each item is
+                                meticulously wrapped and secured to ensure it reaches you in pristine condition. We're
+                                also committed to environmental responsibility, using eco-friendly and recyclable
+                                materials. If you have specific packaging preferences, kindly inform us, and we'll do
+                                our best to accommodate.
+                                When it comes to delivery, we offer a flexible range of shipping options, including
+                                standard and express services. Delivery times vary based on your location and the chosen
+                                shipping method; you can find more details in our comprehensive Shipping Policy.
+                            </p>
+                            <p>Once your order is on its way, we'll provide you with a tracking number, so you can
+                                monitor its progress in real-time. For international orders, please be aware that
+                                customs fees and import duties may apply, and these are the responsibility of the
+                                recipient.
+                                In the event that you're not entirely satisfied with your purchase, rest assured, we
+                                offer a hassle-free return or exchange policy. You have up to 30 days from receipt to
+                                initiate a return or exchange. Just ensure the item is in its original condition and
+                                packaging, and provide proof of purchase as per our Returns Policy.
+                            </p>
+                        </div>
+                        <h3 class="section-title style-1 mb-30">Additional info</h3>
+                                    <table class="font-md mb-30">
+                                        <tbody>
+                                            
+                                            <tr class="weight-capacity">
+                                                <th>Weight Capacity</th>
+                                                <td>
+                                                    <p>60 LBS</p>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr class="seat-back-height">
+                                                <th>Sole</th>
+                                                <td>
+                                                    <p>polyform</p>
+                                                </td>
+                                            </tr>
+                                           
+                                            <tr class="pa_color">
+                                                <th>Color</th>
+                                                <td>
+                                                    <p>Single Colour</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="pa_size">
+                                                <th>Size</th>
+                                                <td>
+                                                    <p>7,8,9,10</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        <div class="social-icons single-share">
+                            <ul class="text-grey-5 d-inline-block">
+                                <li><strong class="mr-10">Share this:</strong></li>
+                                <li class="social-facebook"><a href="#"><img
+                                            src="/assets/imgs/theme/icons/icon-facebook.svg" alt=""></a></li>
+                                <li class="social-twitter"> <a href="#"><img
+                                            src="/assets/imgs/theme/icons/icon-twitter.svg" alt=""></a></li>
+                                <li class="social-instagram"><a href="#"><img
+                                            src="/assets/imgs/theme/icons/icon-instagram.svg" alt=""></a></li>
+                                <li class="social-linkedin"><a href="#"><img
+                                            src="/assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <h3 class="section-title style-1 mb-30 mt-30">Reviews (<%=products.reviews.length%>)</h3>
+                        <!--Comments-->
+                        <div class="comments-area style-2">
+                            <div class="row">
+
+                                <div class="col-lg-8">
+                                    <h4 class="mb-30">Customer Reviews</h4>
+                                    <div class="comment-list">
+                                        <%for(let i=0;i<products.reviews.length;i++){%>
+                                            <div class="single-comment justify-content-between d-flex">
+                                                <div class="user justify-content-between d-flex">
+                                                    <div class="thumb text-center">
+                                                        <img src="/assets/imgs/page/avatar-6.png" alt="">
+
+                                                        <% if (products.reviews[i].customerId &&
+                                                            products.reviews[i].customerId.name) { %>
+                                                            <%= products.reviews[i].customerId.name %>
+                                                                <% } else { %>
+                                                                    Customer Name Unavailable
+                                                                    <% } %>
+
+                                                    </div>
+                                                    <div class="desc">
+                                                        <% const rating=products.reviews[i].rating; %>
+                                                            <div class="star-ratings">
+                                                                <% for (let j=0; j < rating; j++) { %>
+                                                                    <span class="fa fa-star checked"></span>
+                                                                    <% } %>
+                                                                        <% for (let j=rating; j < 5; j++) { %>
+                                                                            <span class="fa fa-star"></span>
+                                                                            <% } %>
+                                                            </div>
+                                                            <p>
+                                                                <%=products.reviews[i].comment%>
+                                                            </p>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="d-flex align-items-center">
+                                                                    <p class="font-xs mr-30">
+                                                                        <%=(new
+                                                                            Date(products.reviews[i].date)).toLocaleString()%>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <%}%>
+                                                <!--single-comment -->
+
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h4 class="mb-30">Customer reviews</h4>
+                                    <div class=" row d-flex mb-30">
+                                        
+                                        <% let totalRating=0; %>
+                                        <%for (let i=0; i <products.reviews.length; i++) {%>
+                                         <%totalRating +=products.reviews[i].rating;%> 
+                                        <%}%>
+                                            <%const averageRating=totalRating / products.reviews.length; %>
+                                            <h6>
+                                                <%= averageRating.toFixed(1) %> out of 5
+                                            </h6>
+                                            <div>
+                                                <% const fullStars = Math.floor(averageRating); %>
+                                                <% const halfStar = averageRating - fullStars >= 0.5; %>
+                                            
+                                                <!-- Full stars -->
+                                                <% for (let i = 0; i < fullStars; i++) { %>
+                                                    <span class="fa fa-star checked"></span>
+                                                <% } %>
+                                            
+                                                <!-- Half star -->
+                                                <% if (halfStar) { %>
+                                                    <span class="fa fa-star-half checked"></span>
+                                                <% } %>
+                                            
+                                                <!-- Empty stars -->
+                                                <% const emptyStars = 5 - Math.ceil(averageRating); %>
+                                                <% for (let i = 0; i < emptyStars; i++) { %>
+                                                    <span class="fa fa-star"></span>
+                                                <% } %>
+                                            </div>
+                                    </div>
+
+                                    <!-- Dynamically generate progress bars for each rating -->
+                                    <div id="reviewProgress">
+                                        <% for (let i=5; i>= 1; i--) { %>
+                                            <div class="progress">
+                                                <span>
+                                                    <%= i %> star
+                                                </span>
+                                                <% const ratingCount=products.reviews.filter(review=> review.rating ===
+                                                    i).length; %>
+                                                    <% const totalReviews=products.reviews.length; %>
+                                                        <% const percentage=(ratingCount / totalReviews) * 100 || 0; %>
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: <%= percentage %>%;"
+                                                                aria-valuenow="<%= percentage %>" aria-valuemin="0"
+                                                                aria-valuemax="100">
+                                                                <%= percentage.toFixed(2) %>%
+                                                            </div>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <a href="#" class="font-xs text-muted">How are ratings calculated?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--comment form-->
+                        <form class="form-contact comment_form" action="" method="post" id="commentForm">
+                            <div class="comment-form">
+                                <h4 class="mb-15">Add a review</h4>
+                                <div class="star-rating" data-rating="0">
+                                    <span class="star" data-value="1">&#9733;</span>
+                                    <span class="star" data-value="2">&#9733;</span>
+                                    <span class="star" data-value="3">&#9733;</span>
+                                    <span class="star" data-value="4">&#9733;</span>
+                                    <span class="star" data-value="5">&#9733;</span>
+                                </div>
+                                <input type="hidden" id="ratingValue" name="rating" value=0>
+
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-12">
+                                        <form class="form-contact comment_form" action="" method="post"
+                                            id="commentForm">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control w-100" name="comment" id="comment"
+                                                            cols="30" rows="9" placeholder="Write Comment"></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="button button-contactForm">Submit
+                                                    Review</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const stars = document.querySelectorAll('.star');
+                        const ratingValueInput = document.getElementById('ratingValue');
+
+                        function handleStarClick(event) {
+                            const clickedStarValue = parseInt(event.target.getAttribute('data-value'));
+
+                            event.target.parentElement.setAttribute('data-rating', clickedStarValue);
+                            ratingValueInput.value = clickedStarValue; // Update hidden input value
+
+                            stars.forEach(star => {
+                                const starValue = parseInt(star.getAttribute('data-value'));
+                                star.classList.toggle('active', starValue <= clickedStarValue);
+                            });
+                        }
+
+                        stars.forEach(star => {
+                            star.addEventListener('click', handleStarClick);
+                        });
+                    });
+                </script>
+
+                <div class="row mt-60">
+                    <div class="col-12">
+                        <h3 class="section-title style-1 mb-30">Related products</h3>
+                    </div>
+                    <div class="col-12">
+                        <div class="row related-products">
+
+                            <%for(let i=0;i<relProducts.length;i++){%>
+                                <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                                    <div class="product-cart-wrap small hover-up">
+
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="/productdetails/<%=relProducts[i]._id %>" tabindex="0">
+                                                    <img class="default-img" src="/<%=relProducts[i].images_url[0]%>"
+                                                        alt="">
+                                                    <img class="hover-img" src="/<%=relProducts[i].images_url[1]%>"
+                                                        alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-action-1">
+                                                <!-- <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal -->
+                                                <!-- <i class="fi-rs-search"></i></a> -->
+                                                <%if(user){%>
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                        href="/addtowishlist?productId=<%=relProducts[i]._id%>"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                    <%}%>
+                                                        <!-- <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html" tabindex="0"><i class="fi-rs-shuffle"></i></a> -->
+                                            </div>
+                                            <div class="product-badges product-badges-position product-badges-mrg">
+                                                <span class="hot">
+                                                    <%=relProducts[i].tags%>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-content-wrap">
+                                            <h2><a href="/productdetails/<%=relProducts[i]._id %>" tabindex="0">
+                                                    <%=relProducts[i].productName%>
+                                                </a></h2>
+                                            <div class="rating-result" title="90%">
+                                                <span>
+                                                </span>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>
+                                                    <%=relProducts[i].salePrice%>
+                                                </span>
+                                                <span class="old-price">
+                                                    <%=relProducts[i].regularPrice%>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%}%>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-img banner-big wow fadeIn f-none animated mt-50">
+                    <img class="border-radius-10" src="/assets/imgs/banner/banner-4.png" alt="">
+                    <div class="banner-text">
+                        <h4 class="mb-15 mt-40">Repair Services</h4>
+                        <h2 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h2>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main">
+        
+        <section class="section-padding footer-mid">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a href="/"><img src="/assets/imgs/theme/logo.svg" alt="logo"></a>
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+                            <p class="wow fadeIn animated">
+                                <strong>Address: </strong>562 Maradu Road, Street 32, Kochi
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>(+91) 9747055702
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+                            <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/purchaseguide">Delivery Information</a></li>
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms &amp; Conditions</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a href="/login">Sign In</a></li>
+                            <li><a href="/shopcart">View Cart</a></li>
+                            <li><a href="/wishlist">My Wishlist</a></li>
+                            <li><a href="/useraccount">Track My Order</a></li>
+                            <li><a href="/contact">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+            
+                        <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
+                            <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
+                            <img class="wow fadeIn animated" src="/assets/imgs/theme/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+       
+        </section>
+       
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2023, <strong class="text-brand">THE SHOE RACK</strong> -Ecommerce PROJECT</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                        Designed by <a href="https://www.linkedin.com/in/athul-tv-912779290/" target="_blank">ATHULTV.com</a>. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Vendor JS-->
+        <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+        <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+        <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/plugins/slick.js"></script>
+        <script src="/assets/js/plugins/jquery.syotimer.min.js"></script>
+        <script src="/assets/js/plugins/wow.js"></script>
+        <script src="/assets/js/plugins/jquery-ui.js"></script>
+        <script src="/assets/js/plugins/perfect-scrollbar.js"></script>
+        <script src="/assets/js/plugins/magnific-popup.js"></script>
+        <script src="/assets/js/plugins/select2.min.js"></script>
+        <script src="/assets/js/plugins/waypoints.js"></script>
+        <script src="/assets/js/plugins/counterup.js"></script>
+        <script src="/assets/js/plugins/jquery.countdown.min.js"></script>
+        <script src="/assets/js/plugins/images-loaded.js"></script>
+        <script src="/assets/js/plugins/isotope.js"></script>
+        <script src="/assets/js/plugins/scrollup.js"></script>
+        <script src="/assets/js/plugins/jquery.vticker-min.js"></script>
+        <script src="/assets/js/plugins/jquery.theia.sticky.js"></script>
+        <script src="/assets/js/plugins/jquery.elevatezoom.js"></script>
+        <!-- Template  JS -->
+        <script src="/assets/js/maind134.js?v=3.4"></script>
+        <script src="/assets/js/shopd134.js?v=3.4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/public/assets/js/userValidate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/shop-product-full.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:46 GMT -->
+
+</html>

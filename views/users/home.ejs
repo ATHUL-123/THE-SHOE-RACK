@@ -1,0 +1,1072 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>SHOE RACK</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/maind134.css?v=3.4">
+    <style>
+       .banner-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 0; /* Adjust as needed */
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.826); /* Adjust the background color and transparency */
+    padding: 20px;
+    text-align: center;
+    transition: bottom 0.3s ease; /* Optional: Add smooth transition */
+}
+
+.banner-img:hover .banner-text {
+    bottom: 40%; /* Adjust as needed */
+}
+.product-rating {
+    display: flex;
+    align-items: center;
+}
+
+.star-rating {
+    font-size: 24px; /* Adjust the size of the stars */
+}
+
+.star {
+    color: #ffd700; /* Set the color of the stars */
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Quick view -->
+   
+    <header class="header-area header-style-2 header-height-2">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li><i class="fi-rs-smartphone"></i> <a href="#">(+91) 9747055702</a></li>
+                                <li><i class="fi-rs-marker"></i><a  href="/contact">Our location</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+                        <div class="text-center">
+                            <div id="news-flash" class="d-inline-block">
+                                <ul>
+                                    <li>Get great Shoes,With Offers<a href="/shop">View details</a></li>
+                                    <li>Supper Value Deals - Save more with coupons</li>
+                                    <li>Trendy Shoes,With Premium Brands<a href="/shop">Shop now</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info header-info-right">
+                           
+                            <ul>
+                                <%if(user){%>
+                                <li>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i><%=user.name%><i class="fi-rs-angle-small-down"></i></a>
+                                    <ul class="language-dropdown">
+                                        <li><a href="/logout">logout</a></li>
+                                        <li><a href="/useraccount">Account</a></li>
+                                        <li><a href="#"></a></li>
+                                    </ul>
+                                </li>
+                                <%}else{%>
+                                <li><i class="fi-rs-user"></i><a href="/login">Log In</a></li>
+                                <li><i class="fi-rs-user"></i><a href="/register">Sign Up</a></li>
+                                <%}%>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="header-wrap">
+                    <div class="logo logo-width-1">
+                        <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="header-right">
+                        <div class="search-style-2">
+                            <form action="/" method="post">
+                                <select name="cat" class="select-active">
+                                <%for(let i=0;i<category.length;i++){%>
+                                    <%if(category[i].status){%>
+                                    <option value="<%=category[i]._id%>"><%=category[i].name%></option>  
+                                    <%}%>
+                                <%}%>
+                               </select>
+                                <input type="text" name="search" placeholder="Search for items...">
+                            </form>
+                        </div>
+                        <div class="header-action-right">
+                            <div class="header-action-2">
+                                <div class="header-action-icon-2">
+                                    <a href="/wishlist">
+                                        <img class="svgInject" alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
+                                        <!-- <span class="pro-count blue">4</span> -->
+                                    </a>
+                                </div>
+                                <div class="header-action-icon-2">
+                                    <a class="mini-cart-icon" href="/shopcart">
+                                        <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                        
+                                    </a>
+                                   
+
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom header-bottom-bg-color sticky-bar">
+            <div class="container">
+                <div class="header-wrap header-space-between position-relative">
+                    <div class="logo logo-width-1 d-block d-lg-none">
+                        <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="header-nav d-none d-lg-flex">
+                        
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
+                            <nav>
+                                <ul>
+                                    <li><a class="active" href="/">Home <i></i></a></li>
+                                    <li>
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li><a href="#">Brands<i class="fi-rs-angle-down"></i></a>
+                                        <ul class="sub-menu">
+                                            <%for(let i =0;i<brands.length;i++){%>
+                                            <li><a href="/brandsearch?brand=<%=brands[i].name%>"><%=brands[i].name%></a></li>
+                                            <%}%>
+                                            
+                                            
+                                        </ul>
+                                    </li>
+                                   
+                                    <li><a href="/useraccount">Account<i class=""></i></a>
+                                       
+                                    </li>
+                                    <li><a href="#">More<i class="fi-rs-angle-down"></i></a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/contact">Contact</a></li>
+                                            <li><a href="/purchaseguide">Purchase Guide</a></li>
+                                            <li><a href="/policy">Privacy Policy</a></li>
+                                            <li><a href="/terms">Terms of Service</a></li>
+                                            <!-- <li><a href="page-404.html">404 Page</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/shop">Shop</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="hotline d-none d-lg-block">
+                        <p><i class="fi-rs-headset"></i><span>Hotline</span>9747 055 702</p>
+                    </div>
+                    
+                    <div class="header-action-right d-block d-lg-none">
+                        <div class="header-action-2">
+                            <div class="header-action-icon-2">
+                                <a href="/wishlist">
+                                    <img alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
+                                    <span class="pro-count white"></span>
+                                </a>
+                            </div>
+                            <div class="header-action-icon-2">
+                                <a class="mini-cart-icon" href="/shopcart">
+                                    <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                   
+
+                                </a>
+                                
+                            </div>
+                            <div class="header-action-icon-2 d-block d-lg-none">
+                                <div class="burger-icon burger-icon-white">
+                                    <span class="burger-icon-top"></span>
+                                    <span class="burger-icon-mid"></span>
+                                    <span class="burger-icon-bottom"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-header-active mobile-header-wrapper-style">
+        <div class="mobile-header-wrapper-inner">
+            <div class="mobile-header-top">
+                <div class="mobile-header-logo">
+                    <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                </div>
+                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                    <button class="close-style search-close">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-header-content-area">
+                <!-- <div class="mobile-search search-style-3 mobile-header-border">
+                    <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"><i class="fi-rs-search"></i></button>
+                    </form>
+                </div> -->
+                <div class="mobile-menu-wrap mobile-header-border">
+                    
+                    <!-- mobile menu start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
+                                <!-- <ul class="dropdown">
+                                    <li><a href="index.html">Home 1</a></li>
+                                    <li><a href="index-2.html">Home 2</a></li>
+                                    <li><a href="index-3.html">Home 3</a></li>
+                                    <li><a href="index-4.html">Home 4</a></li>
+                                </ul> -->
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop-grid-right.html">shop</a>
+                                <ul class="dropdown">
+                                    <li><a class="active" href="/">Home <i></i></a></li>
+                                    <li>
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li><a href="#">Brands<i class="fi-rs-angle-down"></i></a>
+                                        <ul class="sub-menu">
+                                            <%for(let i =0;i<brands.length;i++){%>
+                                            <li><a href="/brandsearch?brand=<%=brands[i].name%>"><%=brands[i].name%></a></li>
+                                            <%}%>
+                                            
+                                            
+                                        </ul>
+                                    </li>
+                                   
+                                    <li><a href="/useraccount">Account<i class=""></i></a>
+                                       
+                                    </li>
+                                    <li><a href="#">More<i class="fi-rs-angle-down"></i></a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/contact">Contact</a></li>
+                                            <li><a href="/purchaseguide">Purchase Guide</a></li>
+                                            <li><a href="/policy">Privacy Policy</a></li>
+                                            <li><a href="/terms">Terms of Service</a></li>
+                                            <!-- <li><a href="page-404.html">404 Page</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/shop">Shop</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Language</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">French</a></li>
+                                    <li><a href="#">German</a></li>
+                                    <li><a href="#">Spanish</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </nav>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-header-info-wrap mobile-header-border">
+                    <%if(user){%>
+                        <li>
+                            <a class="language-dropdown-active" href=""> <i class="fi-rs-world"></i>Account<i class="fi-rs-angle-small-down"></i></a>
+                            <ul class="language-dropdown">
+                                <li><a href="/logout">Logout</a></li>
+                                <li><a href="/useraccount">Account</a></li>
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                        <%}else{%>
+                        <li><i class="fi-rs-user"></i><a href="/login">Log In</a></li>
+                        <li><i class="fi-rs-user"></i><a href="/register">Sign Up</a></li>
+                        <%}%>
+                </div>
+                <div class="mobile-social-icon">
+                    <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- the main banner section -->
+    <main class="main">
+        <section class="home-slider position-relative mb-30">
+            <div class="container">
+                <div  class="home-slide-cover bg-grey-10 mt-30">
+                    <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="container">
+                                <div class="row align-items-center slider-animated-1">
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="hero-slider-content-2">
+                                            <h4 class="animated"><%=banner[0].title1%></h4>
+                                            <h3 class="animated fw-900"><%=banner[0].title2%></h3>
+                                            <h2 class="animated fw-900 text-brand"><%=banner[0].title3%></h2>
+                                            <p class="animated"><%=banner[0].title4%></p>
+                                            <a class=" animated btn btn-brush btn-brush-3" href="/shop" tabindex="0"> Shop Now </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-6">
+                                        <div class="single-slider-img single-slider-img-1">
+                                            <img class="animated" src="<%=banner[0].image%>" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-hero-slider-2 single-animation-wrap">
+                            <div class="container">
+                                <div class="row align-items-center slider-animated-1">
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="hero-slider-content-2">
+                                            <h4 class="animated"><%=banner[1].title1%></h4>
+                                            <h3 class="animated fw-900"><%=banner[1].title2%></h3>
+                                            <h2 class="animated fw-900 text-brand"><%=banner[1].title3%></h2>
+                                            <p class="animated"><%=banner[1].title4%></p>
+                                            <a class="animated btn btn-brush btn-brush-1" href="/shop" tabindex="0"> Get It Now </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-6">
+                                        <div class="single-slider-img single-slider-img-1">
+                                            <img class="animated" src="<%=banner[1].image%>" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-arrow hero-slider-1-arrow"></div>
+                </div>
+            </div>
+        </section>
+        <section class="banners mb-20 mt-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="/<%=products[6].images_url[0]%>" alt="">
+                            <div class="banner-text" >
+                                <span>Smart Offer</span>
+                                <h4>Save 20% on <br><%=products[0].productName%></h4>
+                                <a href="/productdetails/<%=products[6]._id %>">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="/<%=products[7].images_url[0]%>" alt="">
+                            <div class="banner-text">
+                                <span>Sale off</span>
+                                <h4>Great Summer <br>Collection</h4>
+                                <a href="/productdetails/<%=products[7]._id %>">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-md-none d-lg-flex">
+                        <div class="banner-img wow fadeIn animated  mb-sm-0">
+                            <img src="/<%=products[4].images_url[0]%>" alt="">
+                            <div class="banner-text">
+                                <span>New Arrivals</span>
+                                <h4>Shop Today’s <br>Deals & Offers</h4>
+                                <a href="/productdetails/<%=products[4]._id %>">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="product-tabs pt-25 pb-20 wow fadeIn animated">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="widget-category mb-30"> 
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
+                            <ul class="categories">
+                                <%for(let i=0;i<category.length;i++){%>
+                                    <%if(category[i].status){%>
+                                        <li><a href="/categorysearch?catId=<%=category[i]._id%>"><%=category[i].name%></a></li> 
+                                    <%}%>
+                                <%}%>
+                            </ul>
+                        </div>
+                        <div class="widget-category mb-30">
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Sort by</h5>
+                            <ul class="categories">
+                                <ul class="categories">
+                                    <li><a href="/sorting?by=1">Price: Low to High</a></li>
+                                    <li><a href="/sorting?by=-1">Price: High to Low</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="widget-category mb-30">
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Price Range</h5>
+                            <ul class="categories">
+                                <li><a href="/sorting?start=0&end=4000">₹0-₹4000</a></li>
+                                <li><a href="/sorting?start=4000&end=6000">₹4000-₹6000</a></li>
+                                <li><a href="/sorting?start=6000&end=8000">₹6000-₹8000</a></li>
+                                <li><a href="/sorting?start=8000&end=10000">₹8000-₹10000</a></li>
+                                <li><a href="/sorting?start=10000&end=0">10000₹+</a></li>
+                            </ul>
+                        </div>
+                        <div class="banner-img wow fadeIn mb-45mb-lg-0 animated d-lg-block d-none">
+                            <img src="/<%=banner[2].image%>" alt="">
+                            <div class="banner-text">
+                                <span><%=banner[2].title1%></span>
+                                <h4><%=banner[2].title2%> <br><%=banner[2].title3%><br><%=banner[2].title4%></h4>
+                                <a href="/categorysearch?catId=WOMENS">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="tab-header">
+                            
+                        </div>
+                        <!--End nav-tabs-->
+                        <div class="tab-content wow fadeIn animated" id="myTabContent">
+                            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+                                <div class="row product-grid-4">
+                                    <%if(products.length>0){%>
+                                        <%for(let i=0;i<9;i++){ %>
+                                            <%if(products[i].is_active){%>
+                                               
+                                             
+                                    <div class="col-lg-4 col-md-4 col-12 col-sm-6">
+                                        <div class="product-cart-wrap mb-30">
+                                            <div class="product-img-action-wrap">
+                                                <div class="product-img product-img-zoom">
+                                                    <a href="/productdetails/<%=products[i]._id %>">
+                                                        <img class="default-img" src="/<%=products[i].images_url[0]%>" alt="">
+                                                        <img class="hover-img" src="/<%=products[i].images_url[1]%>" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-action-1">
+                                                  
+                                                    <%if(user){%>
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up" href="/addtowishlist?productId=<%=products[i]._id%>"><i class="fi-rs-heart"></i></a>
+                                                   <%}%>
+                                                    
+                                                </div>
+                                                <div class="product-badges product-badges-position product-badges-mrg">
+                                                    <%if(products[i].tags=='Hot'){%>
+                                                    <span class="hot"><%=products[i].tags%></span>
+                                                     <%}else if(products[i].tags=='Best Sell'){%>   
+                                                        <span class="best"><%=products[i].tags%></span>
+                                                    <%}else if(products[i].tags){%>
+                                                    <span class="new"><%=products[i].tags%></span>
+                                                    <%}%>
+
+                                                </div>
+                                            </div>
+                                            <div class="product-content-wrap">
+                                                <div class="product-category">
+                                                    <a href="/productdetails/<%=products[i]._id %>"><%=products[i].category.name%></a>
+                                                </div>
+                                                <h2><a href="/productdetails/<%=products[i]._id %>"><%=products[i].productName%></a></h2>
+                                                <div class="" title="90%">
+                                                    <span>
+                                                        <%if(products[i].discountedPrice>0 && products[i].category.offerstatus){%>
+                                                        <span><%=products[i].category.discount%>% Offer</span>
+                                                        <%}else{%>
+                                                            <span></span>
+                                                        <%}%>
+                                                    </span>
+                                                   
+                                                   
+
+                                                    <!-- Inside the HTML loop where you display products -->
+                                                    <div class="product">
+                                                        <% if(products[i].avgrating && products[i].avgrating > 0) { %>
+                                                            <!-- Display filled stars based on avgrating -->
+                                                            <div class="star-rating">
+                                                                <% for (let j = 0; j < products[i].avgrating; j++) { %>
+                                                                    <span class="star">&#9733;</span>
+                                                                <% } %>
+                                                                <% for (let j = 0; j <5- products[i].avgrating; j++) { %>
+                                                                    <span class="star">&#9734;</span>
+                                                                <% } %>
+                                                            </div>
+                                                        <% } else { %>
+                                                            <!-- Display blank stars (empty placeholders) when avgrating is not available or zero -->
+                                                            <div class="star-rating">
+                                                                <% for (let j = 0; j < 5; j++) { %>
+                                                                    <span class="star">&#9734;</span>
+                                                                <% } %>
+                                                            </div>
+                                                        <% } %>
+                                                    </div>
+                                                    
+                                                   
+                                                    
+
+
+
+                                                </div>
+                                                <%if(products[i].discountedPrice>0 && products[i].category.offerstatus){%>
+                                                <div class="product-price">
+                                                    <span>₹<%=products[i].discountedPrice%></span>
+                                                    <span class="old-price">₹<%=products[i].salePrice%></span>
+                                                </div>
+                                                <%}else{%>
+                                                    <div class="product-price">
+                                                        <span>₹<%=products[i].salePrice%></span>
+                                                    </div>
+                                                    <%}%>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%}%>
+                                    <%}%>
+                                    <%}%>
+                                    
+                                <!--End product-grid-4-->
+                            </div>
+                            <!--En tab one (Featured)-->
+                            
+                            <!--En tab two (Popular)-->
+                            
+                            <!--En tab three (New added)-->
+                        </div>
+                        <!--End tab-content-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner-2 section-padding pb-0">
+            <div class="container">
+                <div class="banner-img banner-big wow fadeIn animated f-none">
+                    <img src="/<%=banner[3].image%>" alt="">
+                    <div class="banner-text d-md-block d-none">
+                        <h4 class="mb-15 mt-40 text-brand"><%=banner[3].title1%></h4>
+                        <h1 class="fw-600 mb-20"><%=banner[3].title2%> <br><%=banner[3].title3%></h1>
+                        <!-- <a href="shop-grid-right.html" class="btn">Learn More <i class="fi-rs-arrow-right"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="popular-categories section-padding mt-15">
+            <div class="container wow fadeIn animated">
+                <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
+                <div class="carausel-6-columns-cover position-relative">
+                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                    <div class="carausel-6-columns" id="carausel-6-columns">
+                      <%for(let i=0;i<category.length;i++){%>
+                        <%if(category[i].status==true){%>
+                        <div class="card-1">
+                            <figure class=" img-hover-scale overflow-hidden">
+                                <a href="/categorysearch?catId=<%=category[i]._id%>"><img src="/<%=products[i].images_url[0]%>" alt=""></a>
+                            </figure>
+                            <h5><a href="/categorysearch?catId=<%=category[i]._id%>"><%=category[i].name%></a></h5>
+                        </div>
+                        <%}}%>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="section-padding">
+            <div class="container wow fadeIn animated">
+                <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
+                <div class="carausel-6-columns-cover position-relative">
+                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
+                    <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                        <%for(let i=0;i<products.length;i++){%>
+                            <%if(products[i].Brand=='ADIDAS'){%>
+                        <div class="product-cart-wrap small hover-up">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img product-img-zoom">
+                                    <a href="/productdetails/<%=products[i]._id %>">
+                                        <img class="default-img" src="/<%=products[i].images_url[0]%>" alt="">
+                                        <img class="hover-img" src="/<%=products[i].images_url[1]%>" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-action-1">
+
+                                  <%if(user){%>
+                                   <a aria-label="Add To Wishlist" class="action-btn hover-up" href="/addtowishlist?productId=<%=products[i]._id%>"><i class="fi-rs-heart"></i></a>
+                                  <%}%>
+                                    <!-- <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html" tabindex="0"><i class="fi-rs-shuffle"></i></a>  -->
+                                </div>
+                                <div class="product-badges product-badges-position product-badges-mrg">
+                                    <span class="hot"><%=products[i].tags%></span>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <h2><a href="/productdetails/<%=products[i]._id %>"><%=products[i].productName%></a></h2>
+                                <div class="product">
+                                    <% if(products[i].avgrating && products[i].avgrating > 0) { %>
+                                        <!-- Display filled stars based on avgrating -->
+                                        <div class="star-rating">
+                                            <% for (let j = 0; j < products[i].avgrating; j++) { %>
+                                                <span class="star">&#9733;</span>
+                                            <% } %>
+                                            <% for (let j = 0; j <5- products[i].avgrating; j++) { %>
+                                                <span class="star">&#9734;</span>
+                                            <% } %>
+                                        </div>
+                                    <% } else { %>
+                                        <!-- Display blank stars (empty placeholders) when avgrating is not available or zero -->
+                                        <div class="star-rating">
+                                            <% for (let j = 0; j < 5; j++) { %>
+                                                <span class="star">&#9734;</span>
+                                            <% } %>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                
+                                <%if(products[i].discountedPrice>0 && products[i].category.offerstatus){%>
+                                    <span><%=products[i].category.discount%>% Offer</span>
+                                <div class="product-price">
+                                    <span>₹<%=products[i].discountedPrice%></span>
+                                    <span class="old-price">₹<%=products[i].salePrice%></span>
+                                </div>
+                                <%}else{%>
+                                    <div class="product-price">
+                                        <span>₹<%=products[i].salePrice%></span>
+                                        
+                                    </div>
+                                <%}%>
+                            </div>
+                        </div>
+                        <%}}%>
+                        <!--End product-cart-wrap-2-->
+                        
+                        <!--End product-cart-wrap-2-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding">
+            <div class="container pb-20">
+                <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>
+                <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
+                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-3-arrows"></div>
+                    <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
+                        <%for(let i=0;i<brands.length;i++){%>
+                        <div class="brand-logo">
+                            <a href="/brandsearch?brand=<%=brands[i].name%>"><img  class="img-grey-hover" src="/<%=brands[i].image%>" alt="" style="width: 250px; height: 200px;"></a>
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-grey-9 section-padding">
+            <div class="container pt-15 pb-25">
+                <div class="heading-tab d-flex">
+                    <div class="heading-tab-left wow fadeIn animated">
+                        <h3 class="section-title mb-20"><span>Monthly</span> Best Sell</h3>
+                    </div>
+                    <div class="heading-tab-right wow fadeIn animated">
+                        <ul class="nav nav-tabs right no-border" id="myTab-1" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="nav-tab-one-1" data-bs-toggle="tab" data-bs-target="#tab-one-1" type="button" role="tab" aria-controls="tab-one" aria-selected="true">Featured</button>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 d-none d-lg-flex">
+                        <div class="banner-img style-2 wow fadeIn animated">
+                            <img src="/<%=banner[4].image%>" alt="">
+                            <div class="banner-text">
+                                <span><%=banner[4].title1%></span>
+                                <h4 class="mt-5"><%=banner[4].title2%><br><%=banner[4].title3%></h4>
+                                <a href="/shop" class="text-white">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12">
+                        <div class="tab-content wow fadeIn animated" id="myTabContent-1">
+                            <div class="tab-pane fade show active" id="tab-one-1" role="tabpanel" aria-labelledby="tab-one-1">
+                                <div class="carausel-4-columns-cover arrow-center position-relative">
+                                    <div class="slider-arrow slider-arrow-2 carausel-4-columns-arrow" id="carausel-4-columns-arrows"></div>
+                                    <div class="carausel-4-columns carausel-arrow-center" id="carausel-4-columns">
+                                        <%for(i=0;i<products.length;i++){%>
+                                            <div class="product-cart-wrap">
+                                                <div class="product-img-action-wrap">
+                                                    <div class="product-img product-img-zoom">
+                                                        <a href="/productdetails/<%=products[i]._id%>">
+                                                            <img class="default-img" src="/<%=products[i].images_url[0]%>" alt="">
+                                                            <img class="hover-img" src="/<%=products[i].images_url[1]%>" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-action-1">
+                                                      
+                                                        <a aria-label="Add To Wishlist" class="action-btn small hover-up" href="/addtowishlist?productId=<%=products[i]._id%>"><i class="fi-rs-heart"></i></a>
+                                                      
+                                                    </div>
+                                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="hot"><%=products[i].tags%></span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-content-wrap">
+                                                    <div class="product-category">
+                                                        <a href="/productdetails/<%=products[i]._id%>"><%=products[i].category.name%></a>
+                                                    </div>
+                                                    <h6><a href="/productdetails/<%=products[i]._id%>"><%=products[i].productName%></a></h6>
+                                                    <div class="product">
+                                                        <% if(products[i].avgrating && products[i].avgrating > 0) { %>
+                                                            <!-- Display filled stars based on avgrating -->
+                                                            <div class="star-rating">
+                                                                <% for (let j = 0; j < products[i].avgrating; j++) { %>
+                                                                    <span class="star">&#9733;</span>
+                                                                <% } %>
+                                                                <% for (let j = 0; j <5- products[i].avgrating; j++) { %>
+                                                                    <span class="star">&#9734;</span>
+                                                                <% } %>
+                                                            </div>
+                                                        <% } else { %>
+                                                            <!-- Display blank stars (empty placeholders) when avgrating is not available or zero -->
+                                                            <div class="star-rating">
+                                                                <% for (let j = 0; j < 5; j++) { %>
+                                                                    <span class="star">&#9734;</span>
+                                                                <% } %>
+                                                            </div>
+                                                        <% } %>
+                                                    </div>
+                                                    
+                                                    <div class="product-price">
+                                                        <span>₹<%=products[i].salePrice%></span>
+                                                        <!-- <span class="old-price"><%=products[i].regularPrice%></span> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                      
+                                            <%}%>
+                                        </div>
+                                       </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End tab-pane-->
+                           
+                        <!--End tab-content-->
+                    </div>
+                    <!--End Col-lg-9-->
+                </div>
+            </div>
+        </section>
+       
+        <section class="mb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="banner-bg wow fadeIn animated" style="background-image: url(`/<%=banner[5].image%>`)">
+                            <div class="banner-content">
+                                <h5 class="text-grey-4 mb-15"><%=banner[5].title1%></h5>
+                                <h2 class="fw-600"><%=banner[5].title2%><span class="text-brand"><%=banner[5].title3%></span><%=banner[5].title4%></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-sm-5 mb-md-0">
+                        <div class="banner-img wow fadeIn animated mb-md-4 mb-lg-0">
+                            <img src="/<%=banner[6].image%>" alt="">
+                            <div class="banner-text" style="margin-top: 3cm;">
+                                <span class="text-white"><%=banner[6].title1%></span>
+                                <h4><%=banner[6].title2%> <br><%=banner[6].title3%></h4>
+                                <a href="/shop" class="text-white">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-sm-5 mb-md-0">
+                        <h4 class="section-title style-1 mb-30 wow fadeIn animated">Best Sell</h4>
+                        <div class="product-list-small wow fadeIn animated">
+                            <%var num=0%>
+                           <%for(i=0;i<products.length;i++){%>
+                        <%if(products[i].tags=='Best Sell' && num<4 && products[i].is_active){%>
+                            <%num++%>
+                            <article class="row align-items-center">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="/productdetails/<%=products[i]._id %>"><img src="/<%=products[i].images_url[0]%>" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h4 class="title-small">
+                                        <a href="/productdetails/<%=products[i]._id %>"><%=products[i].productName%></a>
+                                    </h4>
+                                    <div class="product-price">
+                                        <span>₹<%=products[i].salePrice%></span>
+                                        <span class="old-price">₹<%=products[i].regularPrice%></span>
+                                    </div>
+                                </div>
+                            </article>
+                            <%}}%>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-sm-5 mb-md-0">
+                        <h4 class="section-title style-1 mb-30 wow fadeIn animated">Hot Releases</h4>
+                        <div class="product-list-small wow fadeIn animated">
+                            <%var num=0%>
+                            <%for(i=0;i<products.length;i++){%>
+                         <%if(products[i].tags=='Hot' && num<4 && products[i].is_active){%>
+                             <%num++%>
+                             <article class="row align-items-center">
+                                 <figure class="col-md-4 mb-0">
+                                     <a href="/productdetails/<%=products[i]._id %>"><img src="/<%=products[i].images_url[0]%>" alt=""></a>
+                                 </figure>
+                                 <div class="col-md-8 mb-0">
+                                     <h4 class="title-small">
+                                         <a href="/productdetails/<%=products[i]._id %>"><%=products[i].productName%></a>
+                                     </h4>
+                                     <div class="product-price">
+                                         <span>₹<%=products[i].salePrice%></span>
+                                         <span class="old-price">₹<%=products[i].regularPrice%></span>
+                                     </div>
+                                 </div>
+                             </article>
+                             <%}}%>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title style-1 mb-30 wow fadeIn animated">New Arrivals</h4>
+                        <div class="product-list-small wow fadeIn animated">
+                            <%var num=0%>
+                            <%for(i=0;i<products.length;i++){%>
+                         <%if(products[i].tags=='New' && num<4 && products[i].is_active){%>
+                             <%num++%>
+                             <article class="row align-items-center">
+                                 <figure class="col-md-4 mb-0">
+                                     <a href="/productdetails/<%=products[i]._id %>"><img src="/<%=products[i].images_url[0]%>" alt=""></a>
+                                 </figure>
+                                 <div class="col-md-8 mb-0">
+                                     <h4 class="title-small">
+                                         <a href="/productdetails/<%=products[i]._id %>"><%=products[i].productName%></a>
+                                     </h4>
+                                     <div class="product-price">
+                                         <span>₹<%=products[i].salePrice%></span>
+                                         <span class="old-price">₹<%=products[i].regularPrice%></span>
+                                     </div>
+                                 </div>
+                             </article>
+                             <%}}%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="featured section-padding">
+            <div class="container pb-25">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-1.png" alt="">
+                            <h4 class="bg-1">Free Shipping</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-2.png" alt="">
+                            <h4 class="bg-3">Online Order</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-3.png" alt="">
+                            <h4 class="bg-2">Save Money</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-4.png" alt="">
+                            <h4 class="bg-4">Promotions</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-5.png" alt="">
+                            <h4 class="bg-5">Happy Sell</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-6.png" alt="">
+                            <h4 class="bg-6">24/7 Support</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main">
+        
+        <section class="section-padding footer-mid">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+                            <p class="wow fadeIn animated">
+                                <strong>Address: </strong>562 Maradu Road, Street 32, Kochi
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>(+91) 9747055702
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+                            <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/purchaseguide">Delivery Information</a></li>
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms &amp; Conditions</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a href="/login">Sign In</a></li>
+                            <li><a href="/shopcart">View Cart</a></li>
+                            <li><a href="/wishlist">My Wishlist</a></li>
+                            <li><a href="/useraccount">Track My Order</a></li>
+                            <li><a href="/contact">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+            
+                        <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
+                            <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
+                            <img class="wow fadeIn animated" src="/assets/imgs/theme/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2023, <strong class="text-brand">THE SHOE RACK</strong> -Ecommerce PROJECT</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                        Designed by <a href="https://www.linkedin.com/in/athul-tv-912779290/" target="_blank">ATHULTV.com</a>. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.js"></script>
+    <script src="assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/jquery-ui.js"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="assets/js/plugins/images-loaded.js"></script>
+    <script src="assets/js/plugins/isotope.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="assets/js/maind134.js?v=3.4"></script>
+    <script src="assets/js/shopd134.js?v=3.4"></script>
+
+    <script src="/assets/js/userValidate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+    <%if(msg==='0'){%>
+        <script>
+             document.addEventListener('DOMContentLoaded', function() {
+             wishlistExist();
+        });
+        
+        </script>
+        <%}%>
+</body>
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
+</html>

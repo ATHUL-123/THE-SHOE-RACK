@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/page-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:11:15 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>SHOE RACK</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/maind134.css?v=3.4">
+</head>
+
+<body>
+    <header class="header-area header-style-2 header-height-2">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li><i class="fi-rs-smartphone"></i> <a href="#">(+91) - 974705 - 5702</a></li>
+                                <li><i class="fi-rs-marker"></i><a  href="/contact">Our location</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+                        <div class="text-center">
+                            <div id="news-flash" class="d-inline-block">
+                                <ul>
+                                    <li>Get great devices up to 10% off <a href="/shop">View details</a></li>
+                                    <li>Supper Value Deals - Save more with coupons</li>
+                                    <li>Trendy Shoes, save up 20% off today <a href="/shop">Shop now</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info header-info-right">
+                           
+                            <ul>
+                                <%if(user){%>
+                                <li>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i>Account<i class="fi-rs-angle-small-down"></i></a>
+                                    <ul class="language-dropdown">
+                                        <li><a href="/logout">logout</a></li>
+                                        <li><a href="/useraccount">Account</a></li>
+                                        <li><a href="#"></a></li>
+                                    </ul>
+                                </li>
+                                <%}else{%>
+                                <li><i class="fi-rs-user"></i><a href="/login">Log In</a></li>
+                                <li><i class="fi-rs-user"></i><a href="/register">Sign Up</a></li>
+                                <%}%>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="header-bottom header-bottom-bg-color sticky-bar">
+            <div class="container">
+                <div class="header-wrap header-space-between position-relative">
+                    <div class="logo logo-width-1 d-block d-lg-none">
+                        <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="header-nav d-none d-lg-flex">
+                        
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
+                            
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="header-action-right d-block d-lg-none">
+                        <div class="header-action-2">
+                            <div class="header-action-icon-2">
+                                <a href="/wishlist">
+                                    <img alt="" src="assets/imgs/theme/icons/icon-heart.svg">
+                                    <!-- <span class="pro-count white">4</span> -->
+                                </a>
+                            </div>
+                            <div class="header-action-icon-2">
+                                <a class="mini-cart-icon" href="/shopcart">
+                                    <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                    <%if(user){%>
+                                        <span class="pro-count blue"><%=cart.length%></span>
+                                        <%}%>
+                                </a>
+                                
+                            </div>
+                            <div class="header-action-icon-2 d-block d-lg-none">
+                                <div class="burger-icon burger-icon-white">
+                                    <span class="burger-icon-top"></span>
+                                    <span class="burger-icon-mid"></span>
+                                    <span class="burger-icon-bottom"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-header-active mobile-header-wrapper-style">
+        <div class="mobile-header-wrapper-inner">
+            <div class="mobile-header-top">
+                <div class="mobile-header-logo">
+                    <a href="/"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                </div>
+                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                    <button class="close-style search-close">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-header-content-area">
+                <div class="mobile-search search-style-3 mobile-header-border">
+                    <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"><i class="fi-rs-search"></i></button>
+                    </form>
+                </div>
+                <div class="mobile-menu-wrap mobile-header-border">
+                    
+                    <!-- mobile menu start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
+                                
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/shop">Shop</a>
+                               
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/useraccount">Account</a>
+                                
+                            </li>
+                            
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">More</a>
+                                <ul class="dropdown">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/useraccount">My Account</a></li>
+                                    <li><a href="/register">login/register</a></li>
+                                    <li><a href="/purchaseguide">Purchase Guide</a></li>
+                                    <li><a href="/policy">Privacy Policy</a></li>
+                                    <li><a href="/terms">Terms of Service</a></li>
+                                   
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-header-info-wrap mobile-header-border">
+                    <div class="single-mobile-header-info mt-30">
+                        <a  href="/contact"> Our location </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="/register">Log In / Sign Up </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="#">(+91) - 97470 - 55702</a>
+                    </div>
+                </div>
+                <div class="mobile-social-icon">
+                    <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/" rel="nofollow">Home</a>
+                    <span></span> Account
+                </div>
+            </div>
+        </div>
+        <section class="pt-150 pb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 m-auto">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="dashboard-menu">
+                                    <ul class="nav flex-column" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="dashboard-tab" data-bs-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false"><i class="fi-rs-settings-sliders mr-10"></i>Dashboard</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Orders</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="track-orders-tab" data-bs-toggle="tab" href="#track-orders" role="tab" aria-controls="track-orders" aria-selected="false"><i class="fi-rs-shopping-cart-check mr-10"></i>Your Wallet</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="address-tab" data-bs-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="true"><i class="fi-rs-marker mr-10"></i>My Address</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/logout"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="tab-content dashboard-content">
+                                    <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Hello <%=user.name%>! </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a href="#">edit your password and account details.</a></p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col">
+                                            <div class="card card-user">
+                                                <div class="card-header">
+                                                    <%if(user.image){%>
+                                                    <img class="img-md img-avatar" style="height: 10em;border-radius: 100%;" src="/<%=user.image%>" alt="User pic">
+                                                    <%}else{%>
+                                                        <img class="img-md img-avatar" style="height: 10em;" src="/assets/imgs/page/avatar-6.png" alt="User pic">
+                                                        <%}%>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title mt-50"><%=user.name%></h5>
+                                                    <div class="card-text text-muted">
+                                                        <p class="m-0">Email: <%=user.email%></p>
+                                                        <p class="m-0">Phone: <%=user.phone%></p>
+                                                        <p><template class="__cf_email__" data-cfemail="81ede4f2ede8e4c1e4f9e0ecf1ede4afe2eeec">[email&#160;protected]</template></p>
+                                                       
+                                                        <a href="#" id="editProfilePic" class="btn btn-sm btn-brand rounded font-sm mt-15">Edit Profile Pic</a>
+                                                        <form action="/updatepropic" method="post" enctype="multipart/form-data">
+                                                        <div id="imageInputField" style="display: none;">
+                                                            <div class="input-upload">
+                                                                <img style="height: 5em;" src="/assetsb/imgs/theme/upload.svg" alt="">
+                                                                <div id="imagePreview" class="image-preview"></div>
+                                                                <input required name="image" id="imageInput" class="form-control" type="file" accept="image/*" multiple>
+                                                            </div>
+                                                            <button type="submit" class="btn-brand ">Add Pic</button>
+                                                        </div>
+                                                    </form>
+                                           
+                                                        </div>
+                                                    </div>
+                                               
+                                                </div>
+                                            </div>
+                                        </div>
+                                   
+                                    <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                                        <% if (order.length > 0) { %>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Your Orders</h5>
+                                            </div>
+                                           
+                                            <div class="card-body" style="width: 100%;">
+                                                <div class="table-responsive">
+                                                    <table class="table" id="example">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Order Id</th>
+                                                                <th>Status</th>
+                                                                <th>Total</th>
+                                                                <th>Payment Method</th>
+                                                                <th>Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          
+                                                                <% order.sort((a, b) => new Date(b.orderDate) - new Date(a.orderDate)); %>
+                                                                <% order.forEach(item => { %>
+                                                                       
+                                                                        <tr>
+                                                                            
+                                                                            <td><%= (new Date(item.orderDate)).toLocaleString() %></td>
+                                                                            <td><%= item.orderID %></td>
+                                                                            <%if(item.orderStatus=='Order Placed'|| item.orderStatus=='Shipped'){%>
+                                                                                <td><span class="badge rounded-pill alert-success"><%= item.orderStatus %></span></td>
+                                                                            <%}else if(item.orderStatus=='Delivered'){%>
+                                                                                <td><span class="badge rounded-pill alert-success"><%= item.orderStatus %></span></td>
+                                                                            <%}else{%>
+                                                                                <td><span class="badge rounded-pill alert-danger"><%= item.orderStatus %></span></td>
+                                                                                <%}%>
+                                                                            
+                                                                            <td>₹<%= item.discountedAmount %></td>
+                                                                            <td><%=item.PaymentMethod%></td>
+                                                                            <td><a href="/getorderdetails?OID=<%=item._id%>" class="btn-small d-block">View</a></td>
+                                                                        </tr>
+                                                                   
+                                                                
+                                                                <% }); %>
+                                                           
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } else { %>
+                                            <tr>
+                                                <td colspan="6"><h3>Your Order History Is Empty</h3></td>
+                                            </tr>
+                                        <% } %>
+                                    </div>
+                                    <div class="tab-pane fade" id="track-orders" role="tabpanel" aria-labelledby="track-orders-tab">
+                                    
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="user-wallet">
+                                                    <h5 class="card-title mb-4">Your Wallet</h5>
+                                                    <div class="wallet-info">
+                                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                                            <p class="mb-0">Current Balance:</p>
+                                                            <p class="mb-0">$<span id="wallet-balance"><%= user.wallet %></span></p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade col-md-6" id="address" role="tabpanel" aria-labelledby="address-tab">
+                                        <a type="submit" href="/address-form" class="button button-add-to-cart mb-10">Add Address</a>
+                                        <div class="row">
+                                     <%if(user){%> 
+                                        <%for(let i=0;i<user.address.length;i++){%>
+                                           
+                                            <div class="col-lg-12">
+                                                <div class="card mb-3 mb-lg-0">
+                                                    <div class="card-header">
+                                                        <h5 class="mb-0"><%=user.address[i].addressName%></h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <address>City : <%=user.address[i].city%>,<br>Locality : <%=user.address[i].road%>,<br><%=user.address[i].house%>.<br>Landmark : <%=user.address[i].landmark%>,Pincode : <%=user.address[i].pincode%></address>
+                                                        <p>Country : <%=user.address[i].country%></p>
+                                                        <a href="/editaddress?i=<%=i%>&act=1" class="btn-small">Edit</a>
+                                                        <a href="/editaddress?i=<%=i%>&act=0" class="btn-small">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        <%}%>
+                                        <%}%>
+                                    </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Account Details</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                
+                                                <form method="post" action="/updateuser" id="updateUserForm">
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="firstName">First Name <span class="required">*</span></label>
+                                                            <input required="" value="<%=user.name%>" class="form-control square" id="firstName" name="name" type="text">
+                                                            <span id="nameError" class="error-message"></span>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="phone">Phone <span class="required">*</span></label>
+                                                            <input required="" value="<%=user.phone%>" class="form-control square" id="phone" name="phone">
+                                                            <span id="phoneError" class="error-message"></span>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="email">Email Address <span class="required">*</span></label>
+                                                            <input required="" value="<%=user.email%>" class="form-control square" id="email" name="email" type="email">
+                                                            <span id="emailError" class="error-message"></span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit" class="btn-brand ">Save Cahnges</button>
+                                                </form>
+                                                <script>
+                                                    const form = document.getElementById('updateUserForm');
+                                                
+                                                    form.addEventListener('submit', function(event) {
+                                                        let isValid = true;
+                                                
+                                                        const nameInput = document.getElementById('firstName').value.trim();
+                                                        const phoneInput = document.getElementById('phone').value.trim();
+                                                        const emailInput = document.getElementById('email').value.trim();
+                                                
+                                                        const nameError = document.getElementById('nameError');
+                                                        const phoneError = document.getElementById('phoneError');
+                                                        const emailError = document.getElementById('emailError');
+                                                
+                                                        // Name validation
+                                                        if (nameInput === '') {
+                                                            nameError.innerText = 'Please enter your name';
+                                                            nameError.style.color = 'red';
+                                                            isValid = false;
+                                                        } else {
+                                                            nameError.innerText = '';
+                                                        }
+                                                
+                                                        // Phone number validation
+                                                        if (phoneInput === '' || !isValidPhoneNumber(phoneInput)) {
+                                                            phoneError.innerText = 'Please enter a valid phone number';
+                                                            phoneError.style.color = 'red';
+                                                            isValid = false;
+                                                        } else {
+                                                            phoneError.innerText = '';
+                                                        }
+                                                
+                                                        // Email validation
+                                                        if (emailInput === '' || !isValidEmail(emailInput)) {
+                                                            emailError.innerText = 'Please enter a valid email address';
+                                                            emailError.style.color = 'red';
+                                                            isValid = false;
+                                                        } else {
+                                                            emailError.innerText = '';
+                                                        }
+                                                
+                                                        if (!isValid) {
+                                                            event.preventDefault(); // Prevent form submission if validation fails
+                                                        }
+                                                    });
+                                                
+                                                    function isValidPhoneNumber(phone) {
+                                                        // You can implement more sophisticated phone number validation here
+                                                        return /^\d{10}$/.test(phone); // Validates if phone number has exactly 10 digits
+                                                    }
+                                                
+                                                    function isValidEmail(email) {
+                                                        // You can implement more sophisticated email validation here
+                                                        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Validates basic email format
+                                                    }
+                                                </script>
+                                                
+                                                
+
+                                            </div>
+                                            <div class="row" style="max-width:920px">
+                                                <div class="col-md">
+                                                    <article class="box mb-3 bg-light">
+                                                        <!-- Add data-bs-toggle and data-bs-target attributes to trigger the modal -->
+                                                        <a class="btn float-end btn-light btn-sm rounded font-md" href="#" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Change</a>
+                                                        <h6>Password</h6>
+                                                        <small class="text-muted d-block" style="width:70%">You can reset or change your password by clicking here</small>
+                                                    </article>
+                                                </div>
+                                               
+                                            </div> <!-- row.// -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main">
+        
+        <section class="section-padding footer-mid">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a href="/"><img src="/assets/imgs/theme/logo.svg" alt="logo"></a>
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+                            <p class="wow fadeIn animated">
+                                <strong>Address: </strong>562 Maradu Road, Street 32, Kochi
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>(+91) 9747055702
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+                            <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                                <a href="/"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/purchaseguide">Delivery Information</a></li>
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms &amp; Conditions</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a href="/login">Sign In</a></li>
+                            <li><a href="/shopcart">View Cart</a></li>
+                            <li><a href="/wishlist">My Wishlist</a></li>
+                            <li><a href="/useraccount">Track My Order</a></li>
+                            <li><a href="/contact">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+            
+                        <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
+                            <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
+                            <img class="wow fadeIn animated" src="/assets/imgs/theme/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+       
+        </section>
+       
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2023, <strong class="text-brand">THE SHOE RACK</strong> -Ecommerce PROJECT</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                        Designed by <a href="https://www.linkedin.com/in/athul-tv-912779290/" target="_blank">ATHULTV.com</a>. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <%if(msg){%>
+        <script>
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                confirmOrder();
+            });
+            </script>  
+     
+<%}%>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const editProfilePicBtn = document.getElementById("editProfilePic");
+        const imageInputField = document.getElementById("imageInputField");
+        const imageInput = document.getElementById("imageInput");
+        const imagePreview = document.getElementById("imagePreview");
+
+        editProfilePicBtn.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+
+            // Show/hide the image input field
+            if (imageInputField.style.display === "none") {
+                imageInputField.style.display = "block";
+            } else {
+                imageInputField.style.display = "none";
+            }
+        });
+
+        // Function to handle image preview
+        imageInput.addEventListener("change", function() {
+            const file = imageInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.style.maxHeight = "200px"; // Set maximum height for the preview image
+                    imagePreview.innerHTML = "";
+                    imagePreview.appendChild(img);
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.innerHTML = "No image selected";
+            }
+        });
+    });
+</script>
+             
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal body (Add your password change form here) -->
+                <div class="modal-body">
+                    <!-- Your password change form goes here -->
+                    <!-- Example form structure -->
+                    <form id="passwordChangeForm" action="/changeuserpass" method="post">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input name="oldpass" type="password" class="form-control" id="currentPassword" placeholder="Enter current password" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input name="newpass" type="password" class="form-control" id="newPassword" placeholder="Enter new password" required>
+                            <small id="passwordHelp" class="form-text text-muted">Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm new password" required>
+                            <div id="passwordMismatch" class="text-danger" style="display: none;">Passwords do not match!</div>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                    
+                    <script>
+                        document.getElementById('passwordChangeForm').addEventListener('submit', function (event) {
+                            event.preventDefault(); // Prevent default form submission
+                    
+                            // Get password values
+                            const currentPassword = document.getElementById('currentPassword').value;
+                            const newPassword = document.getElementById('newPassword').value;
+                            const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+                    
+                            // Password strength regex pattern
+                            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+}{"':;?/>.<,])[A-Za-z\d!@#$%^&*()_+}{"':;?/>.<,]{8,}$/;
+                    
+                            // Validate new password strength
+                            if (!passwordPattern.test(newPassword)) {
+                                alert('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                                return;
+                            }
+                    
+                            // Validate if new password matches confirm password
+                            if (newPassword !== confirmNewPassword) {
+                                document.getElementById('passwordMismatch').style.display = 'block';
+                                return;
+                            }
+                    
+                            // Passwords match and meet strength criteria - Proceed with your password change logic here
+                            // ...
+                            this.submit();
+                        });
+                    </script>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           new DataTable('#example');
+         
+    });
+    </script>
+    <!-- Vendor JS-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.js"></script>
+    <script src="assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/jquery-ui.js"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="assets/js/plugins/images-loaded.js"></script>
+    <script src="assets/js/plugins/isotope.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="assets/js/plugins/jquery.theia.sticky.js"></script>
+    <!-- Template  JS -->
+    <script src="assets/js/maind134.js?v=3.4"></script>
+    <script src="/assets/js/userValidate.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+</body>
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/page-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:11:15 GMT -->
+</html>
