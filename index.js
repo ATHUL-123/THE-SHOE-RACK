@@ -51,6 +51,6 @@ app.use('/admin',adminRoute)
 
 
 // The port listening
-app.listen(7000,()=>{
+app.listen(3000,()=>{
     console.log(`server is rinnung on the port ${process.env.PORT}`);
 });
