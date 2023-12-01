@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://athultv702:Athul123@cluster0.z0i1vts.mongodb.net/");
+mongoose.connect("mongodb+srv://athultv702:Athul123@cluster0.z0i1vts.mongodb.net/test");
 const express=require("express")
 const path =require('path')
 const app =  express();
@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
     cb(null, '/uploads');
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);
+    cb(null, file.originalname);                          //updation required  == add date.........
   },
 });
 const upload=multer({storage:storage})

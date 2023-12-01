@@ -48,10 +48,10 @@ const insertUser = async (req, res, name, email, phone, password) => {
         });
         const userData = await user.save();
 
-        const newCart = await Cart.create({
-            userId: userData._id
-            // Add any necessary cart properties
-        });
+        // const newCart = await Cart.create({
+        //     userId: userData._id
+        //     // Add any necessary cart properties
+        // });
         return userData; // Return the saved user data
     }
 
@@ -660,8 +660,7 @@ const addToCart = async (req, res) => {
         const quantity = req.body.selectedQuantity;
         const size = req.body.selectedSize;
         const productId = req.body.productId;
-        const price = req.body.price;
-
+        
         const cartItem = {
             userId: userId,
             productId: productId,
@@ -695,8 +694,7 @@ const loadCart = async (req, res) => {
                     model: 'Category'
                 }
             });
-           console.log('whats happened');
-            console.log(userCart);
+          
             // Render the EJS template with the cart data
             res.render('users/shopcart', { user: userData, category: categoryData, cart: userCart });
         } else {
