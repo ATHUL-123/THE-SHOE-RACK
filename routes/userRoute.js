@@ -59,7 +59,7 @@ user_route.post('/updateuser',userController.updateUser);
 user_route.post('/changeuserpass',userController.changePass);
 user_route.get('/policy',userController.loadPolicy)
 user_route.get('/terms',userController.loadTerms)
-//order starts................................................
+//order starts...............................................................................
 user_route.get('/checkout',auth.isLogin,auth.isBlocked,orderController.loadCheckout)
 user_route.post('/checkout',orderController.placeOrder)
 user_route.get('/getorderdetails',auth.isLogin,orderController.userOrderDetails)
@@ -70,7 +70,8 @@ user_route.get('/onlinepayment',orderController.paymentResponce)
 user_route.post('/applycoupon',auth.isLogin,orderController.addCoupon)
 
 
+
 //error
-user_route.get('/error',userController.PageNotFound)
+user_route.get('*',userController.PageNotFound)
 
 module.exports = user_route;

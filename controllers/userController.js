@@ -667,7 +667,7 @@ const addToCart = async (req, res) => {
             quantity: quantity,
             size: size
         };
-
+       
         const cart = await Cart.create(cartItem);
         res.redirect('/shopcart');
     } catch (error) {
