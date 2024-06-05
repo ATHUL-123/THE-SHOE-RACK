@@ -71,7 +71,6 @@ user_route.post('/applycoupon',auth.isLogin,orderController.addCoupon)
 
 
 
-//error
-user_route.get('*',userController.PageNotFound)
+
 
 module.exports = user_route;

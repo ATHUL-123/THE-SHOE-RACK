@@ -2,6 +2,7 @@ const express = require('express');
 const admin_route= express();
 const adminController=require('../controllers/adminController')
 const orderController=require('../controllers/orderController')
+const userController=require('../controllers/userController')
 const bodyParser=require('body-parser');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' }); // Set the destination folder for uploaded files
@@ -60,5 +61,7 @@ admin_route.get('/resendOTP',adminController.sendOtp)
 admin_route.get('/settings',adminController.loadSettings)
 admin_route.post('/settings',adminController.saveChanges)
 admin_route.post('/changepassword',adminController.changePass)
-admin_route.get('/error',adminController.error)
+
+//error
+
 module.exports=admin_route;
