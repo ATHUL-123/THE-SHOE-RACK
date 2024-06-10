@@ -373,7 +373,7 @@ const cancelOrder = async (req, res) => {
 const onlinePayment = async (req, res) => {
     try {
 
-       
+       console.log('dfdf',process.env.YOUR_KEY_ID);
         const addressId = req.query.addressId
         const couponcode =req.query.couponcode;
         const discount   =parseInt(req.query.discount);
@@ -497,6 +497,7 @@ const onlinePayment = async (req, res) => {
 
 
     } catch (error) {
+        console.log(error)
         res.redirect('/error')
     }
 }
