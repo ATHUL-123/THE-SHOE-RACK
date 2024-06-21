@@ -49,9 +49,9 @@ const adminRoute = require('./routes/adminRoute')
 app.use('/admin',adminRoute)
 
 
-
+const PORT = process.env.PORT || 7000
 
 // The port listening
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log(`server is rinnung on the port ${process.env.PORT}`);
 });
